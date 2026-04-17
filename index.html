@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart School - Official Download</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
         :root {
             --primary-color: #C62828;
@@ -16,6 +20,7 @@
             background-color: var(--bg-color);
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
             background: #fff;
@@ -54,22 +59,30 @@
             background-color: #b71c1c;
         }
 
+        /* স্লাইডার স্টাইল */
         .screenshots {
-            padding: 40px 20px;
+            padding: 50px 0;
             background: #fff;
             text-align: center;
+            width: 100%;
         }
-        .screenshot-grid {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .swiper {
+            width: 100%;
+            padding-top: 30px;
+            padding-bottom: 50px;
         }
-        .screenshot-grid img {
-            width: 250px;
-            border-radius: 15px;
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 260px; /* ইমেজ সাইজ */
+            height: auto;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            border-radius: 20px;
             border: 2px solid #eee;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .features {
@@ -92,6 +105,11 @@
             font-size: 0.9rem;
             color: #888;
         }
+
+        /* স্লাইডার ডট কালার পরিবর্তন */
+        .swiper-pagination-bullet-active {
+            background: var(--primary-color) !important;
+        }
     </style>
 </head>
 <body>
@@ -109,14 +127,17 @@
 
 <div class="screenshots">
     <h2>অ্যাপ স্ক্রিনশট</h2>
-    <div class="screenshot-grid">
-        <img src="screen1.jpg" alt="Screen 1">
-        <img src="screen2.jpg" alt="Screen 2">
-        <img src="screen3.jpg" alt="Screen 3">
-        <img src="screen4.jpg" alt="Screen 4">
+    
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="screen1.jpg" alt="Screen 1"></div>
+            <div class="swiper-slide"><img src="screen2.jpg" alt="Screen 2"></div>
+            <div class="swiper-slide"><img src="screen3.jpg" alt="Screen 3"></div>
+            <div class="swiper-slide"><img src="screen4.jpg" alt="Screen 4"></div>
+            </div>
+        <div class="swiper-pagination"></div>
     </div>
 </div>
-
 <div class="features">
     <h2>অ্যাপের বৈশিষ্ট্য</h2>
     <div class="feature-item">ক্লাস রুটিন এবং নোটিশ বোর্ড সরাসরি অ্যাপে দেখুন।</div>
@@ -128,6 +149,33 @@
 <footer>
     &copy; 2026 Smart School | Developed by RH Raju
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 30, // ইমেজ কতটুকু বাঁকা হবে
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
 
 </body>
 </html>
