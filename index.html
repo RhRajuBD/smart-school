@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
@@ -61,21 +63,23 @@
 
         /* স্লাইডার স্টাইল */
         .screenshots {
-            padding: 50px 0;
+            padding: 40px 0;
             background: #fff;
             text-align: center;
-            width: 100%;
         }
         .swiper {
             width: 100%;
-            padding-top: 30px;
+            padding-top: 20px;
             padding-bottom: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
         }
         .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 200px; /* ইমেজ সাইজ */
+            width: 280px; /* ইমেজের উইথ */
             height: auto;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .swiper-slide img {
             display: block;
@@ -99,14 +103,35 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
+        /* ফুটার ও কন্টাক্ট আইকন স্টাইল */
         footer {
             text-align: center;
-            padding: 30px;
-            font-size: 0.9rem;
-            color: #888;
+            padding: 40px 20px;
+            background: #eee;
+            margin-top: 50px;
         }
+        .contact-links {
+            margin-bottom: 20px;
+        }
+        .contact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            color: #333;
+            margin: 0 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s ease;
+        }
+        .facebook:hover { background: #1877F2; color: #fff; transform: scale(1.1); }
+        .whatsapp:hover { background: #25D366; color: #fff; transform: scale(1.1); }
+        .gmail:hover { background: #D44638; color: #fff; transform: scale(1.1); }
 
-        /* স্লাইডার ডট কালার পরিবর্তন */
         .swiper-pagination-bullet-active {
             background: var(--primary-color) !important;
         }
@@ -127,17 +152,17 @@
 
 <div class="screenshots">
     <h2>অ্যাপ স্ক্রিনশট</h2>
-    
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="screen1.jpg" alt="Screen 1"></div>
             <div class="swiper-slide"><img src="screen2.jpg" alt="Screen 2"></div>
             <div class="swiper-slide"><img src="screen3.jpg" alt="Screen 3"></div>
             <div class="swiper-slide"><img src="screen4.jpg" alt="Screen 4"></div>
-            </div>
+        </div>
         <div class="swiper-pagination"></div>
     </div>
 </div>
+
 <div class="features">
     <h2>অ্যাপের বৈশিষ্ট্য</h2>
     <div class="feature-item">ক্লাস রুটিন এবং নোটিশ বোর্ড সরাসরি অ্যাপে দেখুন।</div>
@@ -147,7 +172,21 @@
 </div>
 
 <footer>
-    &copy; 2026 Smart School | Developed by RH Raju
+    <h3>ডেভেলপারের সাথে যোগাযোগ করুন</h3>
+    <div class="contact-links">
+        <a href="https://facebook.com/yourprofile" target="_blank" class="contact-icon facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        
+        <a href="https://wa.me/8801700000000" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        
+        <a href="mailto:example@gmail.com" class="contact-icon gmail" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    <p>&copy; 2026 Smart School | Developed by **RH Raju**</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -158,8 +197,9 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        spaceBetween: 10, 
         coverflowEffect: {
-            rotate: 30, // ইমেজ কতটুকু বাঁকা হবে
+            rotate: 25,
             stretch: 0,
             depth: 100,
             modifier: 1,
