@@ -6,6 +6,7 @@
     <title>Bengali Software | অ্যাপ স্টোর</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root { --primary: #6366f1; --bg: #f8fafc; --text: #1e293b; }
         body { font-family: 'Hind Siliguri', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
@@ -16,9 +17,10 @@
         /* App Grid */
         .container { max-width: 1000px; margin: -50px auto 50px; padding: 20px; }
         .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .app-card { background: white; padding: 25px; border-radius: 25px; text-align: center; transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .app-card { background: white; padding: 25px; border-radius: 25px; text-align: center; transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-decoration: none; color: inherit; display: block; }
         .app-card:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(99, 102, 241, 0.2); }
-        .app-card img { width: 90px; height: 90px; border-radius: 20px; }
+        .app-card img { width: 90px; height: 90px; border-radius: 20px; object-fit: cover; }
+        .app-card h3 { margin-top: 15px; }
 
         /* Professional Footer */
         .footer { background: #1e293b; color: white; padding: 50px 20px; text-align: center; }
@@ -41,7 +43,32 @@
                 <img src="app_icon.png" alt="Smart School">
                 <h3>Smart School</h3>
             </a>
-            </div>
+            
+            <a href="app2.html" class="app-card">
+                <img src="icon2.png" alt="App 2">
+                <h3>অ্যাপের নাম ২</h3>
+            </a>
+
+            <a href="app3.html" class="app-card">
+                <img src="icon3.png" alt="App 3">
+                <h3>অ্যাপের নাম ৩</h3>
+            </a>
+
+            <a href="app4.html" class="app-card">
+                <img src="icon4.png" alt="App 4">
+                <h3>অ্যাপের নাম ৪</h3>
+            </a>
+
+            <a href="app5.html" class="app-card">
+                <img src="icon5.png" alt="App 5">
+                <h3>অ্যাপের নাম ৫</h3>
+            </a>
+
+            <a href="app6.html" class="app-card">
+                <img src="icon6.png" alt="App 6">
+                <h3>অ্যাপের নাম ৬</h3>
+            </a>
+        </div>
     </div>
 
     <footer class="footer">
